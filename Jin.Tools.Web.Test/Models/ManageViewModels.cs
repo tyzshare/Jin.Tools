@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Jin.Tools.Web.Test.Models
+namespace Jin.Tools.Web.Models
 {
     public class IndexViewModel
     {

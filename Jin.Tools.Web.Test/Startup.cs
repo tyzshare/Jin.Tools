@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Jin.Tools.Web.Test.Startup))]
-namespace Jin.Tools.Web.Test
+[assembly: OwinStartupAttribute(typeof(Jin.Tools.Web.Startup))]
+namespace Jin.Tools.Web
 {
     public partial class Startup
     {

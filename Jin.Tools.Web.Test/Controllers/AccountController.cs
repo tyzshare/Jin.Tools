@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Jin.Tools.Web.Test.Models;
+using Jin.Tools.Web.Models;
 
-namespace Jin.Tools.Web.Test.Controllers
+namespace Jin.Tools.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller

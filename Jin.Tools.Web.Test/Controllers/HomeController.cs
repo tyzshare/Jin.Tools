@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Jin.Tools.Web.Test.Controllers
+namespace Jin.Tools.Web.Controllers
 {
     public class HomeController : Controller
     {

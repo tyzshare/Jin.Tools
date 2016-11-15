@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Jin.Tools.Web.Test.Models;
+using Jin.Tools.Web.Models;
 
-namespace Jin.Tools.Web.Test
+namespace Jin.Tools.Web
 {
     public partial class Startup
     {

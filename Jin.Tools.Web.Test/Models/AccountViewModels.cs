@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Jin.Tools.Web.Test.Models
+namespace Jin.Tools.Web.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

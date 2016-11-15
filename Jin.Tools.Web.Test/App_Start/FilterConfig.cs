@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Jin.Tools.Web.Test
+namespace Jin.Tools.Web
 {
     public class FilterConfig
     {

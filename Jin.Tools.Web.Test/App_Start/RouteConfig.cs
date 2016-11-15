@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Jin.Tools.Web.Test
+namespace Jin.Tools.Web
 {
     public class RouteConfig
     {

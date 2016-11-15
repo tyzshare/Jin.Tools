@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Jin.Tools.Web.Test.Models;
+using Jin.Tools.Web.Models;
 
-namespace Jin.Tools.Web.Test
+namespace Jin.Tools.Web
 {
     public class EmailService : IIdentityMessageService
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jin.Tools.Dto
 {
-    public class UserInfoDto 
+    public class UserInfoDto  
     {
         public long Id
         {

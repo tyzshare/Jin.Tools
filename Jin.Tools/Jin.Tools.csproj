@@ -40,6 +40,22 @@
       <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.5.4\lib\net45\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.5.4\lib\portable-wp80+sl5+net45+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=4.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.4.5.4\lib\net45\ServiceStack.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.5.4\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -71,6 +87,7 @@
     <Compile Include="Cache\IExpireCallback.cs" />
     <Compile Include="Cache\IExpireItem.cs" />
     <Compile Include="Cache\MemoryCache.cs" />
+    <Compile Include="Cache\Redis\RedisHelper.cs" />
     <Compile Include="Comparer\GeneralComparer.cs" />
     <Compile Include="Comparer\GeneralEqualityComparer.cs" />
     <Compile Include="Config\GetConfigMsgHelper.cs" />
@@ -84,6 +101,7 @@
     <Compile Include="File\FileOperateHelper.cs" />
     <Compile Include="Html\HtmlHelper.cs" />
     <Compile Include="Json\JsonHelper.cs" />
+    <Compile Include="Md5\Md5Helper.cs" />
     <Compile Include="Page\IPageResult.cs" />
     <Compile Include="Page\PageResult.cs" />
     <Compile Include="Page\PageResultExtensions.cs" />

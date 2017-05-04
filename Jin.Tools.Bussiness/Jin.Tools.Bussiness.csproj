@@ -45,14 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jin.Tools.Dto\Jin.Tools.Dto.csproj">
-      <Project>{36cbcdc0-7b6e-4a4b-8eec-d7391a924f7d}</Project>
-      <Name>Jin.Tools.Dto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Jin.Tools.Entity\Jin.Tools.Entity.csproj">
-      <Project>{c1a538ab-fe2b-4aef-a41b-358090ebddb0}</Project>
-      <Name>Jin.Tools.Entity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Jin.Tools\Jin.Tools.csproj">
       <Project>{6a201ad5-02e5-47f6-8171-3754859d2797}</Project>
       <Name>Jin.Tools</Name>

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace System
 {
+    /// <summary>
+    /// 获取枚举的描述[DescriptionAttribute],使用缓存，减少反射的次数，提高效率
+    /// </summary>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
     public static class EnumExtensions
     {
@@ -16,10 +19,6 @@ namespace System
         static readonly ICache<Type, Dictionary<int, string>> _descriptionCache = CacheFactory.Instance.CreateMemoryCache<Type, Dictionary<int, string>>();
 
         static object _descriptionLock = new object();
-
-        static readonly ICache<Type, Dictionary<int, string>> _enumDescriptionCache = CacheFactory.Instance.CreateMemoryCache<Type, Dictionary<int, string>>();
-
-        static object _enumDescriptionLock = new object();
 
         #endregion
 
@@ -57,46 +56,6 @@ namespace System
             });
             string description;
             lock (_descriptionLock)
-            {
-                cache.TryGetValue(value.GetHashCode(), out description);
-            }
-            return description;
-        }
-
-        /// <summary>
-        /// 通过类型和枚举值返回对应的描述(EnumDescriptionAttribute)
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static string GetEnumDescription(this Enum value, Boolean nameInstead = true)
-        {
-
-            Type type = value.GetType();
-            Dictionary<int, string> cache = _enumDescriptionCache.Get(type, () =>
-            {
-                Dictionary<int, string> values = new Dictionary<int, string>();
-                foreach (Enum item in Enum.GetValues(type))
-                {
-                    string name = Enum.GetName(type, item);
-                    FieldInfo field = type.GetField(name);
-                    EnumDescriptionAttribute attribute = Attribute.GetCustomAttribute(field, typeof(EnumDescriptionAttribute)) as EnumDescriptionAttribute;
-                    if (attribute == null)
-                    {
-                        if (!nameInstead)
-                        {
-                            name = null;
-                        }
-                    }
-                    else
-                    {
-                        name = attribute.DefaultDescription;
-                    }
-                    values.Add(item.GetHashCode(), name);
-                }
-                return values;
-            });
-            string description;
-            lock (_enumDescriptionLock)
             {
                 cache.TryGetValue(value.GetHashCode(), out description);
             }

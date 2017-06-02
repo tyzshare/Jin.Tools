@@ -39,8 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Jin.Tools, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Jin.Tools.1.0.0.5\lib\Jin.Tools.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Jin.Tools.1.0.0.6\lib\Jin.Tools.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common, Version=4.5.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Common.4.5.4\lib\net45\ServiceStack.Common.dll</HintPath>

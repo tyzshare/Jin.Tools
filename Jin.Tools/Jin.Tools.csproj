@@ -108,6 +108,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleClass\SimpleClass.cs" />
     <Compile Include="SimpleClass\SimpleStruct.cs" />
+    <Compile Include="Sql\WildcardEscapeHelper.cs" />
     <Compile Include="Validate\IValidate.cs" />
     <Compile Include="Validate\ValidateExtensions.cs" />
     <Compile Include="WebRequest\WebRequestHelper.cs" />

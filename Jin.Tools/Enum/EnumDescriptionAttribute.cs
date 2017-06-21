@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace System
 {
     /// <summary>
-    /// 【已启用】，枚举备注以后使用系统的[DescriptionAttribute]方式，并使用EnumExtensions里面获取枚举的描述方法
+    /// 【已弃用】，枚举备注以后使用系统的[DescriptionAttribute]方式，并使用EnumExtensions里面获取枚举的描述方法
     /// </summary>
     public class EnumDescriptionAttribute : Attribute
     {

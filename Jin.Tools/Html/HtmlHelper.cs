@@ -74,7 +74,7 @@ namespace System
                 text = text.Replace(">", "&gt;");
                 text = text.Replace("\r", string.Empty);
                 text = text.Replace("\n", "<br />");
-              
+
             }
             return text;
         }
@@ -108,9 +108,9 @@ namespace System
             text = Regex.Replace(text, "insert", "ins&#101;rt", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "create", "cr&#101;ate", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "delete", "del&#101;te", RegexOptions.IgnoreCase);
-           // text = Regex.Replace(text, "count", "c&#111;unt", RegexOptions.IgnoreCase);
+            // text = Regex.Replace(text, "count", "c&#111;unt", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "drop", "dro&#112", RegexOptions.IgnoreCase);
-           // text = Regex.Replace(text, "truncate", "truncat&#101;", RegexOptions.IgnoreCase);
+            // text = Regex.Replace(text, "truncate", "truncat&#101;", RegexOptions.IgnoreCase);
             //   text = Regex.Replace(text, "asc", "as&#99;", RegexOptions.IgnoreCase);
             //   text = Regex.Replace(text, "mid", "m&#105;d", RegexOptions.IgnoreCase);
             //    text = Regex.Replace(text, "char", "ch&#97;r", RegexOptions.IgnoreCase);
@@ -124,10 +124,10 @@ namespace System
             //      text = Regex.Replace(text, "net", "n&#101;t", RegexOptions.IgnoreCase);
             //text =  Regex.Replace(text,"*", "", RegexOptions.IgnoreCase);
             //text =  Regex.Replace(text,"-", "", RegexOptions.IgnoreCase);
-           // text = Regex.Replace(text, "script", "s&#99;ript", RegexOptions.IgnoreCase);
+            // text = Regex.Replace(text, "script", "s&#99;ript", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "alter", "alt&#101;r", RegexOptions.IgnoreCase);
             return text;
-            
+
 
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace System
             text = Regex.Replace(text, "ins&#101;rt", "insert", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "cr&#101;ate", "create", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "del&#101;te", "delete", RegexOptions.IgnoreCase);
-           // text = Regex.Replace(text, "c&#111;unt", "count", RegexOptions.IgnoreCase);
+            // text = Regex.Replace(text, "c&#111;unt", "count", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "dro&#112", "drop", RegexOptions.IgnoreCase);
             //text = Regex.Replace(text, "truncat&#101;", "truncate", RegexOptions.IgnoreCase);
             //text = Regex.Replace(text, "asc", "as&#99;", RegexOptions.IgnoreCase);
@@ -159,17 +159,17 @@ namespace System
             //text = Regex.Replace(text, "us&#101;r", "user", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "up&#100;ate", "update", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "o&#114;", "or", RegexOptions.IgnoreCase);
-          //  text = Regex.Replace(text, "n&#101;t", "net", RegexOptions.IgnoreCase);
+            //  text = Regex.Replace(text, "n&#101;t", "net", RegexOptions.IgnoreCase);
             //text =  Regex.Replace(text,"*", "", RegexOptions.IgnoreCase);
             //text =  Regex.Replace(text,"-", "", RegexOptions.IgnoreCase);
-          //  text = Regex.Replace(text, "s&#99;ript", "script", RegexOptions.IgnoreCase);
+            //  text = Regex.Replace(text, "s&#99;ript", "script", RegexOptions.IgnoreCase);
             text = Regex.Replace(text, "alt&#101;r", "alter", RegexOptions.IgnoreCase);
 
             return text;
 
 
         }
-     
+
         /// <summary>
         /// 还原危险html标识字符
         /// 如&amp;等
@@ -186,7 +186,7 @@ namespace System
                 text = text.Replace("&#039;", "'");
                 text = text.Replace("&gt;", ">");
                 text = text.Replace("<br />", "\n");
-               
+
             }
             return text;
         }
@@ -382,9 +382,22 @@ namespace System
         /// <returns></returns>
         public static bool CheckTagExist(string html, string tagName)
         {
-            Regex objRegExp = new Regex(string.Format("<{0}\\s+.*?[^><]*?>", tagName), RegexOptions.IgnoreCase);
+            Regex objRegExp = new Regex(string.Format("<{0}[^>]*>((.|\n)*?)</{1}>", tagName, tagName), RegexOptions.IgnoreCase);
             return objRegExp.IsMatch(html);
         }
+        /// <summary>
+        /// 移除指定html内容中指定标记名元素
+        /// </summary>
+        /// <param name="html"></param>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        public static string RemoveTag(string html, string tagName)
+        {
+            Regex objRegExp = new Regex(string.Format("<{0}[^>]*>((.|\n)*?)</{1}>", tagName, tagName), RegexOptions.IgnoreCase);
+            string output = objRegExp.Replace(html, "");
+            return output;
+        }
+
 
         /// <summary>
         /// 替换URL地址为A标签HTML(注：跳过已经在A标签HTML内部的URL地址)
